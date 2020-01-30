@@ -16,6 +16,7 @@ const inquirer = require("inquirer");
 // using inquirer to get the username and the color pick
 const fs = require("fs");
 const generatehtml = require("./generatehtml");
+const axios = require("axios");
 
 
 
@@ -34,13 +35,19 @@ inquirer
           "red", "blue", "pink", "green"]
     }
   ])
-  .then(function(data) {
-      const filename = data.name.toLowerCase().split(' ').join('') + ".json";
+  .then(function({username, color}) {
+    console.log(username, color);
+    const queryUrl = `https://api.github.com/users/${username}`;
 
-      fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
-        if (err) {
-            return console.log (err);
-        }  
-        console.log("Success");
-      })
+    axios.get(queryUrl).then(function(response) {
+      console.log(response.data)
+    })
+      // const filename = data.name.toLowerCase().split(' ').join('') + ".json";
+
+      // fs.writeFile(filename, JSON.stringify(data, null, '\t'), function(err) {
+      //   if (err) {
+      //       return console.log (err);
+      //   }  
+      //   console.log("Success");
+      // })
   });
