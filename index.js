@@ -12,29 +12,26 @@ function init() {
 
 init();
 
-
 const inquirer = require("inquirer");
 // using inquirer to get the username and the color pick
 const fs = require("fs");
+const generatehtml = require("./generatehtml");
+
+
 
 inquirer
   .prompt([
     {
       type: "input",
-      message: "What is your user name?",
-      name: "name"
+      message: "What is your GitHub user name?",
+      name: "username"
     },
     {
       type: "checkbox",
       message: "what is your favorite color?",
-      name: "stack",
+      name: "color",
       choices: [
           "red", "blue", "pink", "green"]
-    },
-    {
-      type: "list",
-      message: "what is your preferred method of communication?",
-      name: "contact"
     }
   ])
   .then(function(data) {
