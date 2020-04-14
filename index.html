@@ -1,32 +1,4 @@
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-function generateHTML(data) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -52,7 +24,7 @@ function generateHTML(data) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: #DE9967;
          padding-top: 100px;
          }
          body {
@@ -63,6 +35,7 @@ function generateHTML(data) {
          main {
          background-color: #E9EDEE;
          height: auto;
+         /* padding-top: 30px; */
          }
          h1, h2, h3, h4, h5, h6 {
          font-family: 'BioRhyme', serif;
@@ -93,8 +66,8 @@ function generateHTML(data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: #870603;
+         color: white;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -105,7 +78,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid white;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -132,6 +105,7 @@ function generateHTML(data) {
          margin-top: 10px;
          }
          .container {
+         /* padding: 50px; */
          padding-left: 100px;
          padding-right: 100px;
          }
@@ -147,8 +121,8 @@ function generateHTML(data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: #870603;
+           color: white;
            margin: 20px;
            position: relative;
            top: 30px;
@@ -171,61 +145,59 @@ function generateHTML(data) {
           } 
          }
       </style>
-      </head>
-      <body >
-   
-              <div class="row">
-                  <div class="col">
-                      <main class="wrapper">
-                      <div class="card container">
-                          <img src="https://avatars0.githubusercontent.com/u/57340399?v=4" class="photo-header" alt="">
-                          <br>
-                          <h1 style="margin-top: 30px;">Hi!</h1>
-                          <h1>My name is ${data.name}.</h1>
-                          <h3>${data.company}</h3>
-                          <h4>${data.location} ${data.repolink} ${data.blog}</h4>
-                      </div>
-                   </main>
-                  </div>
-              </div>
-              <h2 style="text-align: center;">${data.bio}</h2>
-              <div class="row">
-                  <div class="col">
-                      <div class="card">
-                          <h2>Public Repositories</h2>
-                          <h2>${data.public_repos}</h2>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <div class="card">
-                       <h2>Followers</h2>
-                       <h2>${data.followers}</h2>
-                          
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
+   </head>
+   <body >
+
+           <div class="row">
+               <div class="col">
+                   <main class="wrapper">
+                   <div class="card container">
+                       <img src="https://avatars0.githubusercontent.com/u/57340399?v=4" class="photo-header" alt="">
+                       <br>
+                       <h1 style="margin-top: 30px;">Hi!</h1>
+                       <h1>My name is J Stanley.</h1>
+                       <h3>Student at UofA</h3>
+                       <h4>Phoenix, Az GitHub Blog</h4>
+                   </div>
+                </main>
+               </div>
+           </div>
+           <h2 style="text-align: center;">I build things and teach people to code.</h2>
+           <div class="row">
                <div class="col">
                    <div class="card">
-                       <h2>GitHub Stars</h2>
-                       <h2>${data.stars}</h2>
+                       <h2>Public Repositories</h2>
+                       <h2>135</h2>
                    </div>
                </div>
                <div class="col">
                    <div class="card">
-                    <h2>Following</h2>
-                    <h2>${data.following}</h2>
+                    <h2>Followers</h2>
+                    <h2>92</h2>
                        
                    </div>
                </div>
            </div>
-           <br><br>
-   <main class="wrapper">
-   
-   </main>
-   
-   
-      </body>
-      </html>`
+           <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h2>GitHub Stars</h2>
+                    <h2>65</h2>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                 <h2>Following</h2>
+                 <h2>65</h2>
+                    
+                </div>
+            </div>
+        </div>
+        <br><br>
+<main class="wrapper">
 
-        }
+</main>
+
+
+   </body>
+   </html>
