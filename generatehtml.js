@@ -178,12 +178,12 @@ function generateHTML(data) {
                   <div class="col">
                       <main class="wrapper">
                       <div class="card container">
-                          <img src="https://avatars0.githubusercontent.com/u/57340399?v=4" class="photo-header" alt="">
+                          <img src=${data.avatar_url} class="photo-header" alt="">
                           <br>
                           <h1 style="margin-top: 30px;">Hi!</h1>
                           <h1>My name is ${data.name}.</h1>
                           <h3>${data.company}</h3>
-                          <h4>${data.location} ${data.repolink} ${data.blog}</h4>
+                          <h4>${data.location} <a href="${data.html_url}"> GitHub <a href="${data.blog}"> Blog</h4>
                       </div>
                    </main>
                   </div>
@@ -208,7 +208,7 @@ function generateHTML(data) {
                <div class="col">
                    <div class="card">
                        <h2>GitHub Stars</h2>
-                       <h2>${data.stars}</h2>
+                       <h2>${data.stargazers_count}</h2>
                    </div>
                </div>
                <div class="col">
@@ -229,3 +229,4 @@ function generateHTML(data) {
       </html>`
 
         }
+module.exports = generateHTML
